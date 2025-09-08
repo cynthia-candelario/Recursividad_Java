@@ -1,0 +1,28 @@
+package recursividad_estructura_datos;
+import java.util.Scanner;
+public class Factoriales {
+     // Método recursivo para calcular el factorial
+    public static int factorial(int n) {
+        // Caso base
+        if (n == 0) {
+            return 1;
+        }
+        // Caso recursivo
+        return n * factorial(n - 1);
+    }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        // Pedir al usuario que ingrese un número
+        System.out.print("Ingrese un numero para calcular su factorial: ");
+        int numero = scanner.nextInt();
+        // Verificar si el número es negativo
+        if (numero < 0) {
+            System.out.println("El factorial no está definido para números negativos.");
+        } else {
+            int resultado = factorial(numero);
+            System.out.println("El factorial de " + numero + " es: " + resultado);
+        }
+        scanner.close();
+    }
+}
+
